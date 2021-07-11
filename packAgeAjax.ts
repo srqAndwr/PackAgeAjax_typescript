@@ -58,7 +58,7 @@ class $Request{
         $Request.xhr.onreadystatechange = ():void => {
             if($Request.xhr.readyState == 4){
                 if($Request.xhr.status == 200){
-                    switch (config.responseType?.toLowerCase()){
+                    switch ((config.responseType as string).toLowerCase()){
                         case 'json':config.success(JSON.parse($Request.xhr.responseText));
                             break;
                         case 'text':config.success($Request.xhr.responseText);
