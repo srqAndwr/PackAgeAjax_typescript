@@ -36,10 +36,9 @@ class $Request {
             console.log('Request TimeOut!');
         };
         $Request.xhr.onreadystatechange = () => {
-            var _a;
             if ($Request.xhr.readyState == 4) {
                 if ($Request.xhr.status == 200) {
-                    switch ((_a = config.responseType) === null || _a === void 0 ? void 0 : _a.toLowerCase()) {
+                    switch (config.responseType.toLowerCase()) {
                         case 'json':
                             config.success(JSON.parse($Request.xhr.responseText));
                             break;
